@@ -15,13 +15,22 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+/*Primary Color: Dark Blue (#000080)
+ Secondary Color: Light Blue (#add8e6)
+  Accent Color: Navy (#000080) or Sky Blue (#87ceeb)*/
 
+  /*
+  
+    3. Red and Gray Palette: Primary Color: Crimson Red (#dc143c) or Dark Red (#8b0000) 
+    Secondary Color: Charcoal Gray (#333333) or Slate Gray (#708090) 
+    Accent Color: White (#ffffff)
+  */
 body {
+ /*
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background: linear-gradient(to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+ 
+ */
 }

@@ -8,7 +8,7 @@ const FeaturesBenefitsSection = () => {
         },
         {
             title: 'Real-time Tracking',
-            description: 'Track your order in real-time to know exactly when it will arrive.',
+            description: 'Track your shipment in real-time to know exactly when it will arrive.',
         },
         {
             title: 'Wide Platforms Selection',

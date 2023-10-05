@@ -6,14 +6,14 @@ const TestimonialsSection = () => {
             name: 'John Chinua',
             country:'uganda',
             testimonial:
-                'I\'m impressed with the quick and reliable delivery service.The food always arrives hot and on time!',
+                'I\'m impressed with the quick and reliable delivery service.The shippments always arrive on time!',
             image: 'https://lh3.googleusercontent.com/a/ACg8ocKEk52PA6iU_4dPpA5jnf9MUC8Zz77Q3IQyCMbv8rRDFZY=s360-c-no', // Add the actual image file path
         },
         {
             name: 'Sanjay',
             country:'India',
             testimonial:
-                'This platform has made my life so much easier. I love the variety of restaurants available and the easy ordering process.',
+                'This platform has made my life so much easier. I love the variety of platforms available and the easy process.',
             image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2048&q=80', // Add the actual image file path
         },
         {

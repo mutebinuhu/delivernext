@@ -5,6 +5,7 @@ import FeaturesBenefitsSection from './components/FeaturesAndBenefits'
 import HowItWorksSection from './components/HowItWorksSection'
 import TestimonialsSection from './components/TestmonialsSection'
 import ContactSection from './components/ContactSection'
+import Footer from './components/Footer'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <HowItWorksSection/>
         <TestimonialsSection/>
         <ContactSection/>
+        <Footer/>
 
       </section>
     </main>

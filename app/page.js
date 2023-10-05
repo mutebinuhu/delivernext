@@ -2,6 +2,7 @@ import Image from 'next/image'
 import NavBar from './components/NavBar'
 import Banner from './components/Banner'
 import FeaturesBenefitsSection from './components/FeaturesAndBenefits'
+import HowItWorksSection from './components/HowItWorksSection'
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <section className=''>
         <Banner/>
         <FeaturesBenefitsSection/>
+        <HowItWorksSection/>
 
       </section>
     </main>

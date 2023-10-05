@@ -19,7 +19,7 @@ const Banner = () => {
                     </a>
                 </div>
                 <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                    <img src="https://images.pexels.com/photos/6169002/pexels-photo-6169002.jpeg?auto=compress&cs=tinysrgb&w=600" alt="mockup" />
+                    <img src="https://images.pexels.com/photos/6169002/pexels-photo-6169002.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="mockup" />
                 </div>
             </div>
         </section>

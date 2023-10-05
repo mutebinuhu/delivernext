@@ -12,7 +12,7 @@ const FeaturesBenefitsSection = () => {
         },
         {
             title: 'Wide Platforms Selection',
-            description: 'Choose from a variety of Shipping Partners and restaurants.',
+            description: 'Choose from a variety of Shipping Partners.',
         },
         {
             title: 'Cost Comparison',

@@ -4,6 +4,7 @@ import Banner from './components/Banner'
 import FeaturesBenefitsSection from './components/FeaturesAndBenefits'
 import HowItWorksSection from './components/HowItWorksSection'
 import TestimonialsSection from './components/TestmonialsSection'
+import ContactSection from './components/ContactSection'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <FeaturesBenefitsSection/>
         <HowItWorksSection/>
         <TestimonialsSection/>
+        <ContactSection/>
 
       </section>
     </main>

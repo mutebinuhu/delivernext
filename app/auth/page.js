@@ -6,8 +6,8 @@ function SignUp() {
     return (
         <div className="flex h-screen">
             {/* Left Side with Background Image */}
-            <div
-                className="flex-1 bg-cover bg-center"
+            <div 
+                className="flex-1 bg-cover bg-center hidden sm:block"
                 style={{
                     backgroundImage: "url('https://images.pexels.com/photos/753331/pexels-photo-753331.jpeg')", // Replace with your image path
                 }}

@@ -50,12 +50,9 @@ function SignUp() {
                                 placeholder="Your Password"
                             />
                         </div>
-                        <button
-                            type="submit"
-                            className="w-full mt-2 bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600"
-                        >
-                            Sign Up
-                        </button>
+                        <div className="mt-2 w-full">
+                            <IconButton text="Sign Up"  />
+                        </div>
                        
                         
                         <div className="mt-2 w-full">

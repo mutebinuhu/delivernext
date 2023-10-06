@@ -1,4 +1,6 @@
+import IconButton from "@/components/ui/IconButton";
 import React from "react";
+import { FcGoogle } from "react-icons/fc"
 
 function SignUp() {
     return (
@@ -54,18 +56,11 @@ function SignUp() {
                         >
                             Sign Up
                         </button>
-                        <button
-                            type="submit"
-                            className="w-full mt-2 bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600"
-                        >
-                            Google
-                        </button>
-                        <button
-                            type="submit"
-                            className="w-full mt-2 bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600"
-                        >
-                           Facebook
-                        </button>
+                       
+                        
+                        <div className="mt-2 w-full">
+                            <IconButton text="Google" icon={<FcGoogle />} />
+                        </div>
                     </form>
                 </div>
             </div>

@@ -6,13 +6,15 @@ import HowItWorksSection from './components/HowItWorksSection'
 import TestimonialsSection from './components/TestmonialsSection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
+import AboutUs from './components/AboutUs'
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <NavBar/>
+     
       <section className=''>
         <Banner/>
+        <AboutUs/>
         <FeaturesBenefitsSection/>
         <HowItWorksSection/>
         <TestimonialsSection/>

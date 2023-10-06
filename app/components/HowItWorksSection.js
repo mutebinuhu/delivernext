@@ -29,7 +29,7 @@ const HowItWorksSection = () => {
     ];
     
     return (
-        <section className="bg-gray-100 py-12">
+        <section className="bg-gray-100 py-12" id="howitworks">
             <div className="container mx-auto text-center">
                 <h2 className="text-3xl font-semibold mb-6">How It Works</h2>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

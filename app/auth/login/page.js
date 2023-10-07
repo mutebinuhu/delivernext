@@ -1,11 +1,14 @@
+import IconButton from "@/components/ui/IconButton";
+import Link from "next/link";
 import React from "react";
+import { FcGoogle } from "react-icons/fc"
 
-function SignUp() {
+function Login() {
     return (
         <div className="flex h-screen">
             {/* Left Side with Background Image */}
-            <div
-                className="flex-1 bg-cover bg-center"
+            <div 
+                className="flex-1 bg-cover bg-center hidden sm:block"
                 style={{
                     backgroundImage: "url('https://images.pexels.com/photos/753331/pexels-photo-753331.jpeg')", // Replace with your image path
                 }}
@@ -24,7 +27,7 @@ function SignUp() {
             {/* Right Side with Sign-up Form */}
             <div className="flex-1 flex items-center justify-center">
                 <div className="max-w-md w-full p-4">
-                    <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
+                    <h2 className="text-2xl font-semibold mb-4">Login</h2>
                     <form>
                         <div className="mb-4">
                             <label htmlFor="email" className="block text-gray-600">
@@ -48,12 +51,23 @@ function SignUp() {
                                 placeholder="Your Password"
                             />
                         </div>
-                        <button
-                            type="submit"
-                            className="w-full bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600"
-                        >
-                            Sign Up
-                        </button>
+                        <div className="mt-2 w-full">
+                            <IconButton text="Login"  />
+                        </div>
+                       
+                        
+                        <div className="mt-2 w-full mb-8">
+                            <IconButton text="Google" icon={<FcGoogle />} />
+                        </div>
+
+                        <Link href="/auth/signup" className="mt-8">
+                        <div className="mt-2 w-full">
+
+                           
+                                Dont have Account ? <IconButton  text="Sign Up"  />
+                           
+                        </div>
+                        </Link>
                     </form>
                 </div>
             </div>
@@ -61,4 +75,4 @@ function SignUp() {
     );
 }
 
-export default SignUp;
+export default Login;

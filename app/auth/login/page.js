@@ -1,14 +1,58 @@
 "use client"
+import ErrorComponent from "@/app/components/ui/ErrorComponent";
 import IconButton from "@/components/ui/IconButton";
 import Link from "next/link";
-import React from "react";
+import React, {useState} from "react";
 import { FcGoogle } from "react-icons/fc"
 
-const handleLogin = () =>{
 
-}
 
 function Login() {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [errors, setErrors] = useState("");
+    const newErrors = {};
+    const validateForm = () => {
+
+
+        // Validate username
+        if (email.trim() === '') {
+            newErrors.email = 'Email is required';
+        }
+
+        // Validate email
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailRegex.test(email)) {
+            newErrors.email = 'Invalid email address';
+        }
+
+        // Validate password
+        if (password.length < 6) {
+            newErrors.password = 'Password must be at least 6 characters long';
+        }
+
+
+        setErrors(newErrors);
+
+        // Return true if there are no errors
+        return Object.keys(newErrors).length === 0;
+    };
+    const handleLogin = (e) => {
+        e.preventDefault();
+        if (validateForm()) {
+            const userInfo = {
+                email,  password
+            }
+            console.log("userInfo", userInfo);
+
+        } else {
+            console.log("errors", newErrors);
+        }
+
+  
+
+    }
+
     return (
         <div className="flex h-screen">
             {/* Left Side with Background Image */}
@@ -43,7 +87,12 @@ function Login() {
                                 id="email"
                                 className="w-full border border-gray-300 rounded-md py-2 px-3"
                                 placeholder="Your Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
+                            <div className="mt-2">
+                                {errors.email && <ErrorComponent message={errors.email} />}
+                            </div>
                         </div>
                         <div className="mb-4">
                             <label htmlFor="password" className="block text-gray-600">
@@ -54,7 +103,14 @@ function Login() {
                                 id="password"
                                 className="w-full border border-gray-300 rounded-md py-2 px-3"
                                 placeholder="Your Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+
                             />
+                            <div className="mt-2">
+                                {errors.password && <ErrorComponent message={errors.password} />}
+                            </div>
+                        
                         </div>
                         <div className="mt-2 w-full">
                             <IconButton text="Login"  />

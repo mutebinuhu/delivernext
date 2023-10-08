@@ -1,7 +1,12 @@
+"use client"
 import IconButton from "@/components/ui/IconButton";
 import Link from "next/link";
 import React from "react";
 import { FcGoogle } from "react-icons/fc"
+
+const handleLogin = () =>{
+
+}
 
 function Login() {
     return (
@@ -28,7 +33,7 @@ function Login() {
             <div className="flex-1 flex items-center justify-center">
                 <div className="max-w-md w-full p-4">
                     <h2 className="text-2xl font-semibold mb-4">Login</h2>
-                    <form>
+                    <form onSubmit={handleLogin}>
                         <div className="mb-4">
                             <label htmlFor="email" className="block text-gray-600">
                                 Email Address

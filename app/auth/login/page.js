@@ -5,10 +5,12 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import React, {useState} from "react";
 import { FcGoogle } from "react-icons/fc"
+import { useRouter } from "next/navigation";
 
 
 
 function Login() {
+    const router = useRouter();
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [errors, setErrors] = useState("");
@@ -38,10 +40,28 @@ function Login() {
         // Return true if there are no errors
         return Object.keys(newErrors).length === 0;
     };
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
         if (validateForm()) {
-            const supabase = createClientComponentClient();
+            try {
+                const supabase = createClientComponentClient();
+                const { error } = await supabase.auth.signInWithPassword({
+                    email, password
+                });
+
+                if (error) {
+                    setErrors(error.message);
+                }
+
+                if (!error) {
+                    router.push("/dashboard");
+                }
+
+            } catch (error) {
+                console.log("err---", error.message)
+            }
+
+
 
         } else {
             console.log("errors", newErrors);

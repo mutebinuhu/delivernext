@@ -2,12 +2,15 @@
 import ErrorComponent from "@/app/components/ui/ErrorComponent";
 import IconButton from "@/components/ui/IconButton";
 import { Button } from "@/components/ui/button";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import React, {useEffect, useState} from "react";
 import { FcGoogle } from "react-icons/fc";
+import { useRouter } from "next/navigation";
 
 
 function SignUp() {
+    const router = useRouter();
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [phone, setPhone] = useState("");
@@ -57,6 +60,19 @@ function SignUp() {
                 email, username, password, phone, country, confirmPassword
             }
             console.log("userInfo", userInfo);
+            const supabase = createClientComponentClient();
+            const {error} = supabase.auth.signUp({
+                email, password,phone,
+                options: {
+                    emailRedirectTo: `${location.origin}/api/auth/callback`
+                }
+            })
+            if(error){
+                setErrors(error)
+            }
+            if (!error) {
+                router.push('/verify');
+            }
 
         }else{
             console.log("errors",newErrors);
@@ -120,9 +136,7 @@ function SignUp() {
                                 onChange={(e) => setUsername(e.target.value)}
                             />
                            
-                           <div className="mt-2">
-                                {errors.username && <ErrorComponent message={errors.username} />}
-                           </div>
+                       
 
                         </div>
 

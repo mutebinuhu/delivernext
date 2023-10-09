@@ -1,6 +1,7 @@
 "use client"
 import ErrorComponent from "@/app/components/ui/ErrorComponent";
 import IconButton from "@/components/ui/IconButton";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import React, {useState} from "react";
 import { FcGoogle } from "react-icons/fc"
@@ -40,10 +41,7 @@ function Login() {
     const handleLogin = (e) => {
         e.preventDefault();
         if (validateForm()) {
-            const userInfo = {
-                email,  password
-            }
-            console.log("userInfo", userInfo);
+            const supabase = createClientComponentClient();
 
         } else {
             console.log("errors", newErrors);

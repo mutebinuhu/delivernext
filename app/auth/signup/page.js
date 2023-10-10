@@ -123,54 +123,7 @@ function SignUp() {
                         <div className="mt-2">
                             {errors.email && <ErrorComponent message={errors.email} />}
                         </div>
-                        <div className="mb-4">
-                            <label htmlFor="email" className="block text-gray-600">
-                                User name
-                            </label>
-                            <input
-                                type="text"
-                                id="username"
-                                className="w-full border border-gray-300 rounded-md py-2 px-3"
-                                placeholder="Your Username"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                            />
                            
-                       
-
-                        </div>
-
-                        <div className="mb-4">
-                            <label htmlFor="email" className="block text-gray-600">
-                               Phone number
-                            </label>
-                            <input
-                                type="text"
-                                id="phone"
-                                className="w-full border border-gray-300 rounded-md py-2 px-3"
-                                placeholder="Your Phone"
-                                value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
-                            />
-                            <div className="mt-2">
-                                {errors.password && <ErrorComponent message={errors.password} />}
-                            </div>
-                        </div>
-                        <div className="mb-4">
-                            <label htmlFor="email" className="block text-gray-600">
-                                Country
-                            </label>
-                            <select value={country} onChange = {(e) => setCountry(e.target.value)} name="" id="" className="w-full border border-gray-300 rounded-md py-2 px-3">
-                                <option value="UAE">UAE</option>
-                                <option value="INDIA">India</option>
-                                <option value="PHILLIPINES">Phillipines</option>
-                                <option value="UGANDA">Uganda</option>
-                            </select>
-                            <div className="mt-2">
-                                {errors.country && <ErrorComponent message={errors.country} />}
-                            </div>
-                        </div>
-                        
                         <div className="mb-4">
                             <label htmlFor="password" className="block text-gray-600">
                                 Password

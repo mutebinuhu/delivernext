@@ -1,7 +1,13 @@
 "use client"
-import React from 'react';
+import React, {useState} from 'react';
 import { motion } from "framer-motion";
+import UserProfile from '../components/UserProfile';
 const Page = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setIsOpen(!isOpen);
+    };
     return (
         <div className="min-h-screen flex py-12">
 
@@ -12,6 +18,8 @@ const Page = () => {
                 className="flex-1 p-8"
             >
                 <h1 className="text-2xl font-bold mb-4">Delivery Dashboard</h1>
+              
+               
 
               
 

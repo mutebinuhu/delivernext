@@ -24,7 +24,6 @@ const UserProfile = () => {
             console.log('Form values:', values);
         },
     });
-
     return (
         <motion.div
             className="bg-white p-4 rounded-lg shadow-md"
@@ -38,20 +37,25 @@ const UserProfile = () => {
                     <label htmlFor="country" className="block text-gray-600">
                         Country:
                     </label>
-                    <input
-                        type="text"
+                    <select type="text"
                         id="country"
                         name="country"
                         className={`w-full px-4 py-2 border rounded-md ${formik.touched.country && formik.errors.country
-                                ? 'border-red-500'
-                                : 'border-gray-300'
+                            ? 'border-red-500'
+                            : 'border-gray-300'
                             }`}
                         placeholder="Enter your country"
-                        {...formik.getFieldProps('country')}
-                    />
+                        {...formik.getFieldProps('country')}>
+                        <option value=""></option>
+                        <option value="UAE">UAE</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Phillipines">Phillipines</option>
+
+                    </select>
                     {formik.touched.country && formik.errors.country && (
                         <p className="text-red-500 text-sm mt-1">{formik.errors.country}</p>
                     )}
+                  
                 </div>
                 <div className="mb-4">
                     <label htmlFor="city" className="block text-gray-600">

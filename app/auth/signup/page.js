@@ -12,9 +12,6 @@ import { useRouter } from "next/navigation";
 function SignUp() {
     const router = useRouter();
     const [email, setEmail] = useState("");
-    const [username, setUsername] = useState("");
-    const [phone, setPhone] = useState("");
-    const [country, setCountry] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState("");
@@ -22,11 +19,7 @@ function SignUp() {
     const validateForm = () => {
       
 
-        // Validate username
-        if (username.trim() === '') {
-            newErrors.username = 'Username is required';
-        }
-
+     
         // Validate email
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if (!emailRegex.test(email)) {
@@ -42,10 +35,7 @@ function SignUp() {
         if (password !== confirmPassword) {
             newErrors.confirmPassword = 'Passwords do not match';
         }
-        if(country.trim() === '') {
-            newErrors.country = 'Please select a country';
-        }
-
+     
         setErrors(newErrors);
 
         // Return true if there are no errors
@@ -57,7 +47,7 @@ function SignUp() {
         e.preventDefault();
         if(validateForm()) {
             const userInfo = {
-                email, username, password, phone, country, confirmPassword
+                email, username,  confirmPassword
             }
             console.log("userInfo", userInfo);
             const supabase = createClientComponentClient();

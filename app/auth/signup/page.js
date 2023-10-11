@@ -47,12 +47,12 @@ function SignUp() {
         e.preventDefault();
         if(validateForm()) {
             const userInfo = {
-                email, username,  confirmPassword
+                email,  confirmPassword
             }
             console.log("userInfo", userInfo);
             const supabase = createClientComponentClient();
             const {error} = supabase.auth.signUp({
-                email, password,phone,
+                email, password,
                 options: {
                     emailRedirectTo: `${location.origin}/api/auth/callback`
                 }

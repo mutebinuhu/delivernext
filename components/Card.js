@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const Card = ({ imageSrc, description, ctaText, onClick }) => {
+const Card = ({ imageSrc, description, ctaText, onClick, title }) => {
     return (
         <motion.div
             className="max-w-md rounded overflow-hidden shadow-lg"
@@ -9,7 +9,7 @@ const Card = ({ imageSrc, description, ctaText, onClick }) => {
         >
             <img src={imageSrc} alt="Card Image" className="w-full" />
             <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">Card Title</div>
+                <div className="font-bold text-xl mb-2">{title}</div>
                 <p className="text-gray-700 text-base">{description}</p>
             </div>
             <div className="px-6 py-4">

@@ -8,7 +8,7 @@ const NavBar = () => {
 
 
         <nav className="bg-white border-gray-200 dark:bg-gray-900  w-screen" id="testmonials">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <div className="max-w-screen-xl  flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="/" className="flex items-center">
                    <div className='mr-2 dark:text-accent '>
                         <CiDeliveryTruck size="40"  />

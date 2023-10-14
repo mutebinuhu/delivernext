@@ -4,7 +4,7 @@ import {motion} from "framer-motion";
 const PlatFormListCard = ({ imageSrc, description, ctaText, ctaText2, onClick, onClick2,  title, deliveriesCount, price, currencey }) => {
     return (
         <motion.div
-            className="max-w-md rounded overflow-hidden shadow-lg"
+            className="max-w-md rounded overflow-hidden shadow-lg mt-2"
             whileHover={{ scale: 1.05 }}
         >
             <img src={imageSrc} alt="Card Image" className="w-full h-60 object-cover" />

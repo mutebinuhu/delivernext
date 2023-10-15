@@ -5,6 +5,7 @@ import UserProfile from '../components/UserProfile';
 import Card from '@/components/Card';
 import DeliveryPlatform from '../components/DeliveryPlatform';
 import PlatFormListCard from '@/components/PlatFormListCard';
+import ShippingRequestForm from '@/components/ShippingRequestForm';
 const Page = () => {
     const [isOpen, setIsOpen] = useState(false);
     const handleButtonClick = () => {
@@ -78,12 +79,12 @@ const Page = () => {
                             currencey="AED"
                             deliveriesCount={1000}
                             ctaText2="Book Now"
-
                         />                      
                    </div>
                 </div>
             
             </motion.div>
+          
           
         </div>
     );

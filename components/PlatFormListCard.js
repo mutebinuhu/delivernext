@@ -1,9 +1,9 @@
 import React from 'react';
-import {motion} from "framer-motion";
+
 
 const PlatFormListCard = ({ imageSrc, description, ctaText, ctaText2, onClick, onClick2,  title, deliveriesCount, price, currencey }) => {
     return (
-        <motion.div
+        <div
             className="max-w-md rounded overflow-hidden shadow-lg mt-2"
             whileHover={{ scale: 1.05 }}
         >
@@ -28,7 +28,7 @@ const PlatFormListCard = ({ imageSrc, description, ctaText, ctaText2, onClick, o
                     {ctaText2}
                 </button>
             </div>
-        </motion.div>
+        </div>
     );
 }
 

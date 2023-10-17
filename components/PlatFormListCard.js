@@ -4,7 +4,7 @@ import React from 'react';
 const PlatFormListCard = ({ imageSrc, description, ctaText, ctaText2, onClick, onClick2,  title, deliveriesCount, price, currencey }) => {
     return (
         <div
-            className="max-w-md rounded overflow-hidden shadow-lg mt-2"
+            className="max-w-md rounded overflow-hidden shadow-lg mt-2 py-2"
             whileHover={{ scale: 1.05 }}
         >
             <img src={imageSrc} alt="Card Image" className="w-full h-60 object-cover" />
@@ -14,18 +14,19 @@ const PlatFormListCard = ({ imageSrc, description, ctaText, ctaText2, onClick, o
                 <p className='font-bold py-2'>From <span>{currencey}</span> <span> {price}</span></p>
                 <p className=''><span className='bg-orange-300 py-0.5 px-0.5 rounded-lg text-sm font-bold'>{deliveriesCount} </span>+Success Shipments  </p>
             </div>
-            <div className="px-6 py-2 md:flex justify-between ">
-                <button
-                    onClick={onClick}
-                    className="bg-blue-500 mx-4 sm:mx-0 hover:bg-blue-700 text-white font-bold py-1.5 px-2 rounded-full"
-                >
-                    {ctaText}
-                </button>
+            <div className="mx-2 md:flex justify-between sm:space-x-2 mt-4 ">
+                
                 <button
                     onClick={onClick2}
-                    className="bg-blue-500 mx-4  hover:bg-blue-700 text-white font-bold py-1.5 px-2 rounded-full"
+                    className="text-white mb-2 sm:mb-0 bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  px-1 sm:px-4 py-2 text-center mr-3 md:mr-0 dark:bg-primary w-full dark:hover:bg-primary-800 dark:focus:ring-red-5000"
                 >
                     {ctaText2}
+                </button>
+                <button
+                    onClick={onClick}
+                    className="hover:bg-blue-700 w-full border border border-primary hover:bg-primary hover:text-white font-bold py-1.5 px-2 rounded"
+                >
+                    {ctaText}
                 </button>
             </div>
         </div>

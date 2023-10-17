@@ -1,5 +1,6 @@
 import React from 'react';
 import PlatformsList from '../components/PlatformsList';
+import SearchForm from '../components/SearchForm';
 const Page = () => {
 
     /*const handleButtonClick = () => {
@@ -21,15 +22,19 @@ const Page = () => {
                 className="px-8"
             >
                 <h1 className="text-2xl font-bold mb-2">Shippers List</h1>
+                <SearchForm />
+
                 <div className="flex justify-center items-center">
-                    <div className='grid grid-cols-1 sm:grid-cols-4 gap-4 w-full'>
+                    <div className='grid grid-cols-1 sm:grid-cols-4 gap-4 w-full '>
                      
                         <PlatformsList />
+                        
+                       
                                             
                    </div>
                   
                 </div>
-            
+               
             </div>
           
           

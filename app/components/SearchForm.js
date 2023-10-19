@@ -260,10 +260,7 @@ const SearchForm = () => {
                         ))}
                     </select>
                 </div>
-                <div className="flex flex-col">
-                    <label htmlFor="to" className="text-sm font-medium">
-                        Check
-                    </label>
+                <div className="flex flex-col mt-4   sm:mt-0 p-2">
                     <button
                         type="submit"
                         className="text-white bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  px-1 sm:px-4 py-2 text-center mr-3 md:mr-0 dark:bg-primary w-full dark:hover:bg-primary-800 dark:focus:ring-red-5000"

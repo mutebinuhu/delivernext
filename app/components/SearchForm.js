@@ -221,7 +221,7 @@ const SearchForm = () => {
             transition={{ duration: 0.5 }}
             className="bg-white p-4 rounded-lg shadow-md"
         >
-            <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="grid grid-cols-3 gap-4">
                 <div className="flex flex-col">
                     <label htmlFor="from" className="text-sm font-medium">
                         Ship From
@@ -260,7 +260,19 @@ const SearchForm = () => {
                         ))}
                     </select>
                 </div>
-                <div className="col-span-2">
+                <div className="flex flex-col">
+                    <label htmlFor="to" className="text-sm font-medium">
+                        Check
+                    </label>
+                    <button
+                        type="submit"
+                        className="text-white bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  px-1 sm:px-4 py-2 text-center mr-3 md:mr-0 dark:bg-primary w-full dark:hover:bg-primary-800 dark:focus:ring-red-5000"
+                    >
+                        Search
+                    </button>
+                   
+                </div>
+              { /* <div className="col-span-2">
                     <button
                         type="submit"
                         className="text-white bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  px-1 sm:px-4 py-2 text-center mr-3 md:mr-0 dark:bg-primary w-full dark:hover:bg-primary-800 dark:focus:ring-red-5000"
@@ -268,6 +280,7 @@ const SearchForm = () => {
                         Search
                     </button>
                 </div>
+                */}
             </form>
         </motion.div>
     );

@@ -3,7 +3,6 @@ import React from 'react';
 import { Button } from "@/components/ui/button"
 import Link from 'next/link';
 
-
 const Banner = () => {
     return (
         <section class="bg-white dark:bg-gray-900">

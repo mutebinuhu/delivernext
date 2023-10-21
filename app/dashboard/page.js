@@ -1,8 +1,9 @@
+
 import React from 'react';
 import PlatformsList from '../components/PlatformsList';
 import SearchForm from '../components/SearchForm';
+import ShipmentBooking from '../components/ShipmentBooking';
 const Page = () => {
-
     /*const handleButtonClick = () => {
         // Define the action when the button is clicked
         console.log("Button Clicked");
@@ -28,9 +29,6 @@ const Page = () => {
                     <div className='grid grid-cols-1 sm:grid-cols-4 gap-4 w-full '>
                      
                         <PlatformsList />
-                        
-                       
-                                            
                    </div>
                   
                 </div>

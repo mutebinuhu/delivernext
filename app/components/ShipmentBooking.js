@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import store from "../../redux/store";
 import { motion } from 'framer-motion';
+import { CiDeliveryTruck } from 'react-icons/ci';
 
 const ShipmentBooking = ({showPage}) => {
 
@@ -62,7 +63,16 @@ const ShipmentBooking = ({showPage}) => {
                     transition={{ duration: 0.5 }}
                     className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg"
                 >
-                    <h2 className="text-2xl font-semibold mb-4">Book a Shipment</h2>
+                    
+                    <div className='md-flex w-full'>
+                        <a href="/" className="flex items-center">
+                            <div className='mr-2 dark:text-accent '>
+                                <CiDeliveryTruck size="20" />
+                            </div>
+                            <span className="text-md self-center sm:text-xl font-semibold whitespace-nowrap dark:text-white">Deliver Next</span>
+                        </a>
+                        <h2 className="text-2xl font-semibold mb-4 mt-4 ">Book a Shipment</h2>
+                    </div>
                     <form onSubmit={handleFormSubmit}>
                         <div className="mb-4">
                             <label htmlFor="pickupLocation" className="block text-sm font-medium">

@@ -130,7 +130,7 @@ const ShipmentBooking = ({showPage}) => {
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition-colors"
+                            className="text-white bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm  px-1 sm:px-4 py-3 text-center mr-3 md:mr-0 dark:bg-primary w-full dark:hover:bg-primary-800 dark:focus:ring-red-5000 transition-colors"
                         >
                             Book Shipment
                         </button>

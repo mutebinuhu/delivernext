@@ -23,14 +23,14 @@ const Page = () => {
                 transition={{ duration: 0.5 }}
                 className="px-8"
             >
-                <h1 className="text-2xl font-bold mb-2">Find Available Carriers</h1>
+                <h1 className="text-2xl font-bold mb-2">Find Available Carriers Now</h1>
                 <SearchForm />
                 <div className='mt-4'>
                     <h2 className='text-2xl font-bold py-2 text-center'>Post Your Shipments So Carriers can find You</h2>
 
                     <ShipmentForm />
                 </div>
-                <h2 className='mt-4 text-2xl text-bold'>Available Carriers</h2>
+                    <h2 className='mt-4 text-2xl font-bold'>Available Carriers</h2>
 
                 <div className="flex justify-center items-center">
 

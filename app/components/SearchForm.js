@@ -231,7 +231,7 @@ const SearchForm = () => {
                         name="from"
                         value={fromCountry}
                         onChange={(e) => setFromCountry(e.target.value)}
-                        className="border border-gray-300 p-4  rounded"
+                        className="border border-gray-300 p-4 sm:p-3 rounded"
                     >
                         <option value="">Select a country</option>
                         {countries.map((country) => (
@@ -250,7 +250,7 @@ const SearchForm = () => {
                         name="to"
                         value={toCountry}
                         onChange={(e) => setToCountry(e.target.value)}
-                        className="border border-gray-300 p-4  rounded"
+                        className="border border-gray-300 p-4 sm:p-3 rounded"
                     >
                         <option value="">Select a country</option>
                         {countries.map((country) => (
@@ -264,7 +264,7 @@ const SearchForm = () => {
                     <div className="">
                         <button
                             type="submit"
-                            className="text-white bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  px-1 sm:px-4 py-3 text-center mr-3 md:mr-0 dark:bg-primary w-full dark:hover:bg-primary-800 dark:focus:ring-red-5000"
+                            className="text-white bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  px-1 sm:px-4 py-3 sm:py-4 text-center mr-3 md:mr-0 dark:bg-primary w-full dark:hover:bg-primary-800 dark:focus:ring-red-5000"
                         >
                             Search
                         </button>

@@ -30,10 +30,11 @@ const Page = () => {
 
                     <ShipmentForm />
                 </div>
+                <h2 className='mt-4 text-2xl text-bold'>Available Carriers</h2>
 
                 <div className="flex justify-center items-center">
+
                     <div className='grid grid-cols-1 sm:grid-cols-4 gap-4 w-full '>
-                        <h2 className='mt-4 text-2xl text-bold'>Available Carriers</h2>
                         <PlatformsList />
                    </div>
                   

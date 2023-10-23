@@ -56,7 +56,7 @@ const ShipmentBooking = ({showPage}) => {
    
         return (
 
-            <div className="flex justify-center items-center min-h-screen">
+            <div className="flex justify-center items-center min-h-screen ">
                 <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}

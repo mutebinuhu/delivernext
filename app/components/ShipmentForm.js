@@ -214,6 +214,7 @@ const ShipmentForm = () => {
         cargoType: '',
         specialRequirements: '',
         moreInformation: '',
+        weight: '',
     });
 
     const handleChange = (e) => {
@@ -279,18 +280,19 @@ const ShipmentForm = () => {
                 </div>
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="cargoType">
-                        Type of Cargo:
+                        Weight:
                     </label>
                     <input
                         className="w-full border rounded p-4 sm:p-3 "
                         type="text"
-                        id="cargoType"
-                        name="cargoType"
-                        value={shipment.cargoType}
+                        id="weight"
+                        name="weight"
+                        value={shipment.weight}
                         onChange={handleChange}
                         
                     />
                 </div>
+                
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="specialRequirements">
                         Special Requirements:

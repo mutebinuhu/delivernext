@@ -3,6 +3,211 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const ShipmentForm = () => {
+
+    const [fromCountry, setFromCountry] = useState("");
+    const [toCountry, setToCountry] = useState("");
+
+    const countries = [
+        'Afghanistan',
+        'Albania',
+        'Algeria',
+        'Andorra',
+        'Angola',
+        'Antigua and Barbuda',
+        'Argentina',
+        'Armenia',
+        'Australia',
+        'Austria',
+        'Azerbaijan',
+        'Bahamas',
+        'Bahrain',
+        'Bangladesh',
+        'Barbados',
+        'Belarus',
+        'Belgium',
+        'Belize',
+        'Benin',
+        'Bhutan',
+        'Bolivia',
+        'Bosnia and Herzegovina',
+        'Botswana',
+        'Brazil',
+        'Brunei',
+        'Bulgaria',
+        'Burkina Faso',
+        'Burundi',
+        'Cabo Verde',
+        'Cambodia',
+        'Cameroon',
+        'Canada',
+        'Central African Republic',
+        'Chad',
+        'Chile',
+        'China',
+        'Colombia',
+        'Comoros',
+        'Congo (Congo-Brazzaville)',
+        'Costa Rica',
+        'Croatia',
+        'Cuba',
+        'Cyprus',
+        'Czechia (Czech Republic)',
+        'Democratic Republic of the Congo (Congo-Kinshasa)',
+        'Denmark',
+        'Djibouti',
+        'Dominica',
+        'Dominican Republic',
+        'East Timor (Timor-Leste)',
+        'Ecuador',
+        'Egypt',
+        'El Salvador',
+        'Equatorial Guinea',
+        'Eritrea',
+        'Estonia',
+        'Eswatini',
+        'Ethiopia',
+        'Fiji',
+        'Finland',
+        'France',
+        'Gabon',
+        'Gambia',
+        'Georgia',
+        'Germany',
+        'Ghana',
+        'Greece',
+        'Grenada',
+        'Guatemala',
+        'Guinea',
+        'Guinea-Bissau',
+        'Guyana',
+        'Haiti',
+        'Honduras',
+        'Hungary',
+        'Iceland',
+        'India',
+        'Indonesia',
+        'Iran',
+        'Iraq',
+        'Ireland',
+        'Israel',
+        'Italy',
+        'Ivory Coast',
+        'Jamaica',
+        'Japan',
+        'Jordan',
+        'Kazakhstan',
+        'Kenya',
+        'Kiribati',
+        'Korea, North',
+        'Korea, South',
+        'Kosovo',
+        'Kuwait',
+        'Kyrgyzstan',
+        'Laos',
+        'Latvia',
+        'Lebanon',
+        'Lesotho',
+        'Liberia',
+        'Libya',
+        'Liechtenstein',
+        'Lithuania',
+        'Luxembourg',
+        'Madagascar',
+        'Malawi',
+        'Malaysia',
+        'Maldives',
+        'Mali',
+        'Malta',
+        'Marshall Islands',
+        'Mauritania',
+        'Mauritius',
+        'Mexico',
+        'Micronesia',
+        'Moldova',
+        'Monaco',
+        'Mongolia',
+        'Montenegro',
+        'Morocco',
+        'Mozambique',
+        'Myanmar (formerly Burma)',
+        'Namibia',
+        'Nauru',
+        'Nepal',
+        'Netherlands',
+        'New Zealand',
+        'Nicaragua',
+        'Niger',
+        'Nigeria',
+        'North Macedonia (formerly Macedonia)',
+        'Norway',
+        'Oman',
+        'Pakistan',
+        'Palau',
+        'Palestine State',
+        'Panama',
+        'Papua New Guinea',
+        'Paraguay',
+        'Peru',
+        'Philippines',
+        'Poland',
+        'Portugal',
+        'Qatar',
+        'Romania',
+        'Russia',
+        'Rwanda',
+        'Saint Kitts and Nevis',
+        'Saint Lucia',
+        'Saint Vincent and the Grenadines',
+        'Samoa',
+        'San Marino',
+        'Sao Tome and Principe',
+        'Saudi Arabia',
+        'Senegal',
+        'Serbia',
+        'Seychelles',
+        'Sierra Leone',
+        'Singapore',
+        'Slovakia',
+        'Slovenia',
+        'Solomon Islands',
+        'Somalia',
+        'South Africa',
+        'South Sudan',
+        'Spain',
+        'Sri Lanka',
+        'Sudan',
+        'Suriname',
+        'Sweden',
+        'Switzerland',
+        'Syria',
+        'Taiwan',
+        'Tajikistan',
+        'Tanzania',
+        'Thailand',
+        'Togo',
+        'Tonga',
+        'Trinidad and Tobago',
+        'Tunisia',
+        'Turkey',
+        'Turkmenistan',
+        'Tuvalu',
+        'Uganda',
+        'Ukraine',
+        'United Arab Emirates',
+        'United Kingdom',
+        'United States of America',
+        'Uruguay',
+        'Uzbekistan',
+        'Vanuatu',
+        'Vatican City (Holy See)',
+        'Venezuela',
+        'Vietnam',
+        'Yemen',
+        'Zambia',
+        'Zimbabwe',
+    ];
+
+
     const [shipment, setShipment] = useState({
         origin: '',
         destination: '',
@@ -31,46 +236,59 @@ const ShipmentForm = () => {
             className='bg-white p-4 rounded-lg shadow-md'
         >
             <div className='md:flex justify-between'>
-                <div className="mb-4">
+                <div className="mb-4 ">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="origin">
                         Origin:
                     </label>
-                    <input
-                        className="w-full border rounded py-2 px-3"
-                        type="text"
-                        id="origin"
-                        name="origin"
-                        value={shipment.origin}
-                        onChange={handleChange}
-                        required
-                    />
+                    
+                    <select
+                        id="from"
+                        name="from"
+                        value={fromCountry}
+                        onChange={(e) => setFromCountry(e.target.value)}
+                        className="border border-gray-300 p-4 sm:p-3 rounded w-full"
+                    >
+                        <option value="">Select a country</option>
+                        {countries.map((country) => (
+                            <option key={country} value={country}>
+                                {country}
+                            </option>
+                        ))}
+                    </select>
                 </div>
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="destination">
                         Destination:
                     </label>
-                    <input
-                        className="w-full border rounded py-2 px-3"
+                    
+                    <select
                         type="text"
                         id="destination"
                         name="destination"
-                        value={shipment.destination}
-                        onChange={handleChange}
-                        required
-                    />
+                        value={toCountry}
+                        onChange={(e) => setToCountry(e.target.value)}
+                        className="border border-gray-300 p-4 sm:p-3  rounded w-full"
+                    >
+                        <option value="">Select a country</option>
+                        {countries.map((country) => (
+                            <option key={country} value={country}>
+                                {country}
+                            </option>
+                        ))}
+                    </select>
                 </div>
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="cargoType">
                         Type of Cargo:
                     </label>
                     <input
-                        className="w-full border rounded py-2 px-3"
+                        className="w-full border rounded p-4 sm:p-3 "
                         type="text"
                         id="cargoType"
                         name="cargoType"
                         value={shipment.cargoType}
                         onChange={handleChange}
-                        required
+                        
                     />
                 </div>
                 <div className="mb-4">
@@ -78,7 +296,7 @@ const ShipmentForm = () => {
                         Special Requirements:
                     </label>
                     <input
-                        className="w-full border rounded py-2 px-3"
+                        className="w-full border rounded p-4 sm:p-3 "
                         type="text"
                         id="specialRequirements"
                         name="specialRequirements"

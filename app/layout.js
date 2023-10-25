@@ -1,3 +1,4 @@
+import Nav from './components/Nav';
 import NavBar from './components/NavBar';
 import './globals.css'
 import { Rubik } from 'next/font/google'
@@ -12,7 +13,13 @@ export default function RootLayout({ children }) {
   return (
        <html lang="en">
       <body className={`${rubik.className} relative`}>
-        <NavBar />
+  
+      
+
+        <div className=' '>
+          <NavBar />
+
+        </div>
         {children}
     </body>
     </html>

@@ -1,4 +1,5 @@
 import React from 'react';
+import LinkPrimaryButton from './LinkPrimaryButton';
 
 const ContactSection = () => {
     return (
@@ -50,6 +51,9 @@ const ContactSection = () => {
                                 />
                             </svg>
                             <a href="mailto:info@example.com" className="text-blue-500">info@delivernext.com</a>
+                        </div>
+                        <div className="my-6">
+                            <LinkPrimaryButton message="GET STARTED" linkTo="/dashboard" />
                         </div>
                     </div>
                 </div>

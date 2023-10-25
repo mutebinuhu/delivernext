@@ -1,4 +1,5 @@
 import React from 'react';
+import LinkPrimaryButton from './LinkPrimaryButton';
 
 const TestimonialsSection = () => {
     const testimonialsData = [
@@ -6,7 +7,7 @@ const TestimonialsSection = () => {
             name: 'John Chinua',
             country:'uganda',
             testimonial:
-                'I\'m impressed with the quick and reliable delivery service.The shippments always arrive on time!',
+                'I\'m impressed with the quick and reliable delivery service.The shippments always arrive safe and  on time!',
             image: 'https://lh3.googleusercontent.com/a/ACg8ocKEk52PA6iU_4dPpA5jnf9MUC8Zz77Q3IQyCMbv8rRDFZY=s360-c-no', // Add the actual image file path
         },
         {
@@ -40,6 +41,9 @@ const TestimonialsSection = () => {
                             <p className="text-gray-600 mb-4">{testimonial.testimonial}</p>
                             <p className="text-lg font-semibold">{testimonial.name}</p>
                             <span className="italic mt-4"><span className="text-bold">-</span>{testimonial.country}</span>
+                            <div className="my-6">
+                                <LinkPrimaryButton message="GET STARTED" linkTo="/dashboard" />
+                            </div>
                         </div>
                     ))}
                 </div>

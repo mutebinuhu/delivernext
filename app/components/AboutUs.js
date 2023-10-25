@@ -1,4 +1,5 @@
 import React from "react";
+import LinkPrimaryButton from "./LinkPrimaryButton";
 
 function AboutUs() {
     return (
@@ -16,6 +17,9 @@ function AboutUs() {
                             reliable, cost-effective, and efficient shipping solutions that
                             meet your needs.
                         </p>
+                        <div className="my-6">
+                            <LinkPrimaryButton message="GET STARTED" linkTo="/dashboard" />
+                        </div>
                     </div>
                     <div className="flex-1">
                         <h2 className="text-xl font-semibold text-gray-700 mb-2">
@@ -27,9 +31,15 @@ function AboutUs() {
                             experts. This allows us to offer you a seamless shipping
                             experience, whether you are shipping locally or globally.
                         </p>
+                        <div className="my-6">
+                            <LinkPrimaryButton message="GET STARTED" linkTo="/dashboard" />
+                        </div>
+
                     </div>
                 </div>
+
             </div>
+            
         </div>
     );
 }

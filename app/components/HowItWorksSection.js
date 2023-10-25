@@ -1,4 +1,5 @@
 import React from 'react';
+import LinkPrimaryButton from './LinkPrimaryButton';
 
 const HowItWorksSection = () => {
     const steps = [
@@ -42,6 +43,9 @@ const HowItWorksSection = () => {
                             />
                             <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
                             <p className="text-gray-600">{step.description}</p>
+                            <div className="my-6">
+                                <LinkPrimaryButton message="GET STARTED" linkTo="/dashboard" />
+                            </div>
                         </div>
                     ))}
                 </div>

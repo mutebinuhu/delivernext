@@ -23,7 +23,6 @@ const Page = () => {
                 transition={{ duration: 0.5 }}
                 className="px-8"
             >
-                <h1 className="text-2xl font-bold mb-2 text-center mt-6">Find Available Carriers Now</h1>
                 <SearchForm />
                 <div className='mt-12'>
                     <h2 className='text-2xl font-bold py-2 text-center'>Post Your Shipments So Carriers can find You</h2>

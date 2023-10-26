@@ -221,6 +221,8 @@ const SearchForm = () => {
             transition={{ duration: 0.5 }}
             className="bg-white p-4 rounded-lg shadow-md"
         >
+                <h1 className="text-2xl font-bold  text-center mt-20 mb-4">Find Available Carriers Now</h1>
+
             <form onSubmit={handleSubmit} className="grid grid-cols-3 gap-4">
                 <div className="flex flex-col">
                     <label htmlFor="from" className="text-sm font-medium">

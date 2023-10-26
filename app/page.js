@@ -22,13 +22,7 @@ export default function Home() {
   };
   return (
     <Provider store={store}>
-      <div>
-        <button onClick={toggleNavBar} className="fixed top-4 right-4 bg-blue-500 text-white px-4 py-2 rounded">
-          {isNavBarOpen ? 'Hide' : 'Show'} Navigation
-        </button>
-        <Nav isOpen={isNavBarOpen} toggleNavBar={toggleNavBar} />
-        {/* Your main content */}
-      </div>
+   
       <main className="min-h-screen">
 
         <section className=''>

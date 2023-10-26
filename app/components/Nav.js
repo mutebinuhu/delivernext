@@ -8,7 +8,7 @@ const getUrl = () =>{
 }
 
 const NavLinks = () =>{
-    if (getUrl() === "http://localhost:3000/") {
+    if (getUrl() === "http://localhost:3000/" || getUrl() === "https://delivernext.vercel.app/") {
         return (
         <>
             <li>

@@ -56,7 +56,7 @@ const ShipmentBooking = ({showPage}) => {
    
         return (
 
-            <div className="flex justify-center items-center min-h-screen ">
+            <div className="flex justify-center w-1/2 w-full mx:4 items-center min-h-screen ">
                 <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
@@ -124,7 +124,7 @@ const ShipmentBooking = ({showPage}) => {
                         </div>
                         <div className="mb-4">
                             <label htmlFor="weight" className="block text-sm font-medium">
-                                Weight (in kg)
+                                Weights (in kg)
                             </label>
                             <input
                                 type="number"
@@ -137,6 +137,18 @@ const ShipmentBooking = ({showPage}) => {
                             {errors.weight && (
                                 <p className="text-red-500 text-xs mt-1">{errors.weight}</p>
                             )}
+                        </div>
+                        <div className="mb-4">
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="moreInformation">
+                                More Information:
+                            </label>
+                            <textarea
+                                className="w-full border rounded py-2 px-3"
+                                id="moreInformation"
+                                name="moreInformation"
+                                value={""}
+                                onChange={""}
+                            />
                         </div>
                         <button
                             type="submit"

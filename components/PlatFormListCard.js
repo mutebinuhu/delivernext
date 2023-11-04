@@ -26,7 +26,7 @@ const PlatFormListCard = ({ imageSrc, showBookingForm, description, ctaText, cta
                 <div className="font-bold text-xl mb-2">{title}</div>
                 <p className="text-gray-700 text-base my-1">{description}</p>
                 <p className='font-bold py-2'>From <span>{currencey}</span> <span> {price}</span></p>
-                <p className=''><span className='bg-orange-300 py-0.5 px-0.5 rounded-lg text-sm font-bold'>{deliveriesCount} </span>+Success Shipments  </p>
+                <p className=''><span className='bg-primary text-white py-0.5 px-0.5 rounded-lg text-sm font-bold'>{deliveriesCount} </span>+Success Shipments  </p>
             </div>
             <div className="mx-2 md:flex justify-between sm:space-x-2 mt-4 ">
                 

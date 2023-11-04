@@ -280,7 +280,7 @@ const ShipmentForm = () => {
                 </div>
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="cargoType">
-                        Weight:
+                        Weight (kg):
                     </label>
                     <input
                         className="w-full border rounded p-4 sm:p-3 "

@@ -9,18 +9,19 @@ import { useRouter, usePathname } from 'next/navigation'
 
 
 const NavBar = () => {
+    const dashboardLinks = ['/dashboard', '/book']
     const pathName = usePathname();
     const router = useRouter();
-    console.log("router", pathName)
     const [isNavBarOpen, setIsNavBarOpen] = useState(false);
 
     const toggleNavBar = () => {
         setIsNavBarOpen(!isNavBarOpen);
     };
 
-    const getUrl = () =>{
+    let  getUrl = () =>{
         return pathName
        }
+    let path = getUrl();
 
        //manage redirecting home
        const redirectHome = () =>{
@@ -35,7 +36,7 @@ const NavBar = () => {
        }
        
        const NavLinks = () =>{
-           if (getUrl() === "/dashboard" || "/book") {
+           if (dashboardLinks.includes(path)) {
                return (
                <>
           

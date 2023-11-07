@@ -4,7 +4,7 @@ import LinkPrimaryButton from "./LinkPrimaryButton";
 function AboutUs() {
     return (
         <div className="bg-gray-100 py-10" id="about">
-            <div className="container mx-auto p-4">
+            <div className="container mx-auto sm:mx-28 mx-0">
                 <h1 className="text-3xl font-semibold text-gray-800 mb-6">About Us</h1>
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
                     <div className="flex-1">

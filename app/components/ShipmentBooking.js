@@ -40,6 +40,7 @@ const ShipmentBooking = ({showPage}) => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         if (validateForm()) {
+            console.log(e)
             // Your form submission logic here
             // You can use the formValues state for submitting data to your server.
         }
@@ -146,8 +147,7 @@ const ShipmentBooking = ({showPage}) => {
                                 className="w-full border rounded py-2 px-3"
                                 id="moreInformation"
                                 name="moreInformation"
-                                value={""}
-                                onChange={""}
+                              
                             />
                         </div>
                         <button

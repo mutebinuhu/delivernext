@@ -31,7 +31,7 @@ const PlatFormListCard = ({ imageSrc, showBookingForm, description, ctaText, cta
             <div className="mx-2 md:flex justify-between sm:space-x-2 mt-4 ">
                 
                 <Link
-                    href="/book"
+                    href={`/book?platform=${title}`}
                     onClick={()=>handleClick(showBookingForm)}
                    
                     className="w-full"

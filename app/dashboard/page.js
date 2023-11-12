@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import PlatformsList from '../components/PlatformsList';
 import SearchForm from '../components/SearchForm';
@@ -24,6 +25,7 @@ const Page = () => {
                 className="px-8"
             >
                 <SearchForm />
+
                 <div className='mt-12'>
                     <h2 className='text-2xl font-bold py-2 text-center'>Post Your Shipments So Carriers can find You</h2>
 

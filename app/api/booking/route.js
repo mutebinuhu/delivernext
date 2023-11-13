@@ -5,9 +5,19 @@ import { cookies } from "next/headers";
 
 
 export const GET = async (request) => {
-    return NextResponse.json({
-        data:"Bookings"
-    })
+    try {
+        //returns all shippers
+        const supabase =  createRouteHandlerClient({cookies})
+
+        const { data, error } = await supabase.from('bookings').select('*');
+        if (error) {
+            throw error;
+          }
+          return NextResponse.json({ data });
+    } catch (error) {
+        console.error('Error fetching data from Supabase:', error);
+        return NextResponse.json({ error: 'Internal Server Error' });
+    }
    
 }
 
@@ -26,7 +36,7 @@ export const POST = async (request) => {
     
         //api success response
         return NextResponse.json({booking:data})
-        
+
     } catch (error) {
         console.log("err--------------", error.message)
     }

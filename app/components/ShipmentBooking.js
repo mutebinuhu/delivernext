@@ -66,12 +66,7 @@ const ShipmentBooking = ({showPage}) => {
                 >
                     
                     <div className='md-flex w-full'>
-                        <a href="/" className="flex items-center">
-                            <div className='mr-2 dark:text-accent '>
-                                <CiDeliveryTruck size="20" />
-                            </div>
-                            <span className="text-md self-center sm:text-xl font-semibold whitespace-nowrap dark:text-white">Deliver Next</span>
-                        </a>
+                      
                         <h2 className="text-2xl font-semibold mb-4 mt-4 ">Book a Shipment</h2>
                     </div>
                     <form onSubmit={handleFormSubmit}>

@@ -26,11 +26,16 @@ const Page = () => {
             >
                 <SearchForm />
 
-                <div className='mt-12'>
-                    <h2 className='text-2xl font-bold py-2 text-center'>Post Your Shipments So Carriers can find You</h2>
+                {/** shipment form to post shipments
+                 * 
+                 *   <div className='mt-12'>
+                        <h2 className='text-2xl font-bold py-2 text-center'>Post Your Shipments So Carriers can find You</h2>
 
-                    <ShipmentForm />
-                </div>
+                        <ShipmentForm />
+                     </div>
+                 * 
+                 */}
+              
                     <h2 className='mt-4 text-2xl font-bold'>Available Carriers</h2>
 
                 <div className="flex justify-center items-center">

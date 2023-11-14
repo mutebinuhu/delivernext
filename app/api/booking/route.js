@@ -5,10 +5,11 @@ import { cookies } from "next/headers";
 
 
 export const GET = async (request) => {
+
+   console.log("req", request);
     try {
         //returns all shippers
         const supabase =  createRouteHandlerClient({cookies})
-
         const { data, error } = await supabase.from('bookings').select('*');
         if (error) {
             throw error;
@@ -42,3 +43,4 @@ export const POST = async (request) => {
     }
    
 }
+

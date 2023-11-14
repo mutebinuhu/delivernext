@@ -6,7 +6,6 @@ import { cookies } from "next/headers";
 
 export const GET = async (request) => {
 
-   console.log("req", request);
     try {
         //returns all shippers
         const supabase =  createRouteHandlerClient({cookies})
@@ -24,12 +23,14 @@ export const GET = async (request) => {
 
 export const POST = async (request) => {
 
-    const {shipper_name, units, shipper_id, pickup_location,drop_off, shipment_date, weight, information, customer_phone} =await  request.json();
+
+    try {
+        
+    const {shipper_name, units, shipper_id, pickup_location,drop_off, shipment_date, weight, information, customer_phone} = await request.json();
 
     const supabase =  createRouteHandlerClient({cookies})
 
-    try {
-        const {data, error} = await supabase.from('bookings').insert({shipper_name, shipper_id, pickup_location,drop_off, shipment_date, weight, information, units, customer_phone}).single().select()
+    const {data, error} = await supabase.from('bookings').insert({shipper_name, shipper_id, pickup_location,drop_off, shipment_date, weight, information, units, customer_phone}).single().select()
         if(error){
         //api error response
             return NextResponse.json({error})    
@@ -42,5 +43,9 @@ export const POST = async (request) => {
         console.log("err--------------", error.message)
     }
    
+}
+
+export const PATCH =  async (request) =>{
+return NextResponse({method:"PATCH"})
 }
 

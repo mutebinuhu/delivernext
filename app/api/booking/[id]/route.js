@@ -16,3 +16,20 @@ export const GET = async (request, {params}) =>{
     return NextResponse.json({error})
    }
 }
+export const PATCH = async (request, {params}) =>{
+    try {
+     const id = params.id
+     const newData = await request.json()
+     const supabase = createRouteHandlerClient({cookies})
+     const {data, error} = await supabase.from('bookings').update(newData).eq('id', id).select().single()
+     if(error){
+         throw new Error(error)
+     }
+     return NextResponse.json({data}, {
+         status:200
+     })
+    } catch (error) {
+     //tthrow new Error(error)
+     console.log("errrrrr", error)
+    }
+ }

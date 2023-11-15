@@ -26,18 +26,18 @@ export const POST = async (request) => {
 
     try {
         
-    const {shipper_name, units, shipper_id, pickup_location,drop_off, shipment_date, weight, information, customer_phone} = await request.json();
-
+    const bookingInfo = await request.json();
+    
     const supabase =  createRouteHandlerClient({cookies})
 
-    const {data, error} = await supabase.from('bookings').insert({shipper_name, shipper_id, pickup_location,drop_off, shipment_date, weight, information, units, customer_phone}).single().select()
+    const {data, error} = await supabase.from('bookings').insert({...bookingInfo}).single().select()
         if(error){
         //api error response
             return NextResponse.json({error})    
         }
     
         //api success response
-        return NextResponse.json({booking:data})
+        return NextResponse.json({data})
 
     } catch (error) {
         console.log("err--------------", error.message)

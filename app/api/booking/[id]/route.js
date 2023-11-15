@@ -29,7 +29,8 @@ export const PATCH = async (request, {params}) =>{
          status:200
      })
     } catch (error) {
-     //tthrow new Error(error)
-     console.log("errrrrr", error)
+    console.log("err", error)
+     throw new Error(error)
+    
     }
  }

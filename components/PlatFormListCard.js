@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 
 
-const PlatFormListCard = ({ imageSrc, showBookingForm, description, ctaText, ctaText2, onClick, onClick2,  title, deliveriesCount, price, currencey }) => {
+const PlatFormListCard = ({ imageSrc, showBookingForm, description, ctaText, ctaText2, onClick, onClick2,  title, deliveriesCount, price, currencey, id }) => {
     const [showBook, setShowBook] = useState(false);
     const handleClick = (status) => {
        
@@ -31,7 +31,7 @@ const PlatFormListCard = ({ imageSrc, showBookingForm, description, ctaText, cta
             <div className="mx-2 md:flex justify-between sm:space-x-2 mt-4 ">
                 
                 <Link
-                    href={`/book?platform=${title}`}
+                    href={`/book?platform=${title}&shipper_id=${id}`}
                     onClick={()=>handleClick(showBookingForm)}
                    
                     className="w-full"

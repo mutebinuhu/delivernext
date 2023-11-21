@@ -45,15 +45,18 @@ function Login() {
         if (validateForm()) {
             try {
                 const supabase = createClientComponentClient();
-                const { error } = await supabase.auth.signInWithPassword({
+                const { data, error } = await supabase.auth.signInWithPassword({
                     email, password
                 });
-
+                console.log("userdata", data)
                 if (error) {
                     setErrors(error.message);
                 }
 
                 if (!error) {
+                    window.localStorage.setItem("user_details", JSON.stringify({
+                        email:data.user.email
+                    }))
                     router.push("/dashboard");
                 }
 

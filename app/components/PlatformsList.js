@@ -40,6 +40,7 @@ const PlatformsList = async () => {
                     deliveriesCount={1000}
                     ctaText2="Book Now" 
                     showBookingForm={true}
+                    id={platform.id}
                 /> 
                 </div>
             )

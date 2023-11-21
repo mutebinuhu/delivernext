@@ -4,14 +4,25 @@ import React, { useState } from 'react';
 import store from "../../redux/store";
 import { motion } from 'framer-motion';
 import { CiDeliveryTruck } from 'react-icons/ci';
+import { useSearchParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
+
+
+
 
 const ShipmentBooking = ({showPage}) => {
+    const searchParams = useSearchParams()
+ 
+    const shipperId = searchParams.get('shipper_id')
+    const shipperName = searchParams.get('platform')
+    console.log("shipper", shipperId, "shipperName", shipperName)
 
     const [formValues, setFormValues] = useState({
         pickupLocation: '',
         deliveryLocation: '',
         shipmentDate: '',
         weight: '',
+
     });
 
     const [errors, setErrors] = useState({});
@@ -41,6 +52,10 @@ const ShipmentBooking = ({showPage}) => {
         e.preventDefault();
         if (validateForm()) {
             console.log(e)
+            formValues.shipperId = shipperId
+            formValues.shipperName = shipperName
+            console.log("formValues ", formValues)
+            
             // Your form submission logic here
             // You can use the formValues state for submitting data to your server.
         }

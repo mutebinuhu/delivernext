@@ -202,10 +202,13 @@ const countries = [
     'Zimbabwe',
 ];
 
+const uaeStates = ['Abu Dhabi', 'Dubai', 'Sharjah', 'Ajman', 'Umm Al-Quwain', 'Fujairah', 'Ras Al Khaimah'];
+
 
 const SearchForm = () => {
     const [fromCountry, setFromCountry] = useState('');
     const [toCountry, setToCountry] = useState('');
+    const [state, setState] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -223,10 +226,29 @@ const SearchForm = () => {
         >
                 <h1 className="text-2xl font-bold  text-center mt-20 mb-4">Find Available Carriers Now</h1>
 
-            <form onSubmit={handleSubmit} className="grid grid-cols-3 gap-4">
+            <form onSubmit={handleSubmit} className="grid grid-cols-4 gap-4">
+            <div className="flex flex-col">
+                    <label htmlFor="from" className="text-sm font-medium">
+                        State
+                    </label>
+                    <select
+                        id="from"
+                        name="from"
+                        value={state}
+                        onChange={(e) => setState(e.target.value)}
+                        className="border border-gray-300 p-4 sm:p-3 rounded"
+                    >
+                        <option value="">Select State</option>
+                        {uaeStates.map((country) => (
+                            <option key={country} value={country}>
+                                {country}
+                            </option>
+                        ))}
+                    </select>
+                </div>
                 <div className="flex flex-col">
                     <label htmlFor="from" className="text-sm font-medium">
-                        Ship From
+                        Pick Up Location
                     </label>
                     <select
                         id="from"
@@ -245,7 +267,7 @@ const SearchForm = () => {
                 </div>
                 <div className="flex flex-col">
                     <label htmlFor="to" className="text-sm font-medium">
-                        Ship To
+                        Drop Off Location
                     </label>
                     <select
                         id="to"
@@ -268,7 +290,7 @@ const SearchForm = () => {
                             type="submit"
                             className="text-white bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  px-1 sm:px-4 py-3 sm:py-4 text-center mr-3 md:mr-0 dark:bg-primary w-full dark:hover:bg-primary-800 dark:focus:ring-red-5000"
                         >
-                            Search
+                            Book Now
                         </button>
                     </div>
                 </div>

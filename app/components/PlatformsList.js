@@ -16,15 +16,13 @@ const getPlatforms = async () =>{
         return data; 
         
     } catch (error) {
-        console.log("errs", error);
+     
     }
 }
 const PlatformsList = async () => {
     const data = await getPlatforms();
-    console.log("shipperrr", data);
-    const handleClick = () =>{
-        alert("hello")
-    }
+  
+   
     return (
         <>
         {data && data.map((platform)=>{

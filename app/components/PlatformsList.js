@@ -22,7 +22,6 @@ const getPlatforms = async () =>{
 const PlatformsList = async () => {
     const data = await getPlatforms();
   
-   
     return (
         <>
         {data && data.map((platform)=>{

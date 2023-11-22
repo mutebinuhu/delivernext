@@ -9,12 +9,243 @@ import { FcGoogle } from "react-icons/fc";
 import { useRouter } from "next/navigation";
 
 
-function SignUp() {
+
+
+function  SignUp() {
+    const [isSubMiting, setIsSubMiting] = useState(false)
     const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [userName, setUserName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [country, setCountry] = useState("");
+    
     const [errors, setErrors] = useState("");
+    const getData = async () => {
+        const data = await fetch(`http://localhost:3000/api/profile`, {
+            method:"POST",
+            body: JSON.stringify({username:userName, phone, country})
+        });
+        let test = await data.json();
+        return test.data
+    
+      };
+
+    useEffect(()=>{
+       
+
+        if(isSubMiting){
+            getData().then((data)=>{
+                console.log("test",data)
+            })
+        }
+        console.log("issubmit", isSubMiting)
+
+    })
+
+    const countries = [
+        'Afghanistan',
+        'Albania',
+        'Algeria',
+        'Andorra',
+        'Angola',
+        'Antigua and Barbuda',
+        'Argentina',
+        'Armenia',
+        'Australia',
+        'Austria',
+        'Azerbaijan',
+        'Bahamas',
+        'Bahrain',
+        'Bangladesh',
+        'Barbados',
+        'Belarus',
+        'Belgium',
+        'Belize',
+        'Benin',
+        'Bhutan',
+        'Bolivia',
+        'Bosnia and Herzegovina',
+        'Botswana',
+        'Brazil',
+        'Brunei',
+        'Bulgaria',
+        'Burkina Faso',
+        'Burundi',
+        'Cabo Verde',
+        'Cambodia',
+        'Cameroon',
+        'Canada',
+        'Central African Republic',
+        'Chad',
+        'Chile',
+        'China',
+        'Colombia',
+        'Comoros',
+        'Congo (Congo-Brazzaville)',
+        'Costa Rica',
+        'Croatia',
+        'Cuba',
+        'Cyprus',
+        'Czechia (Czech Republic)',
+        'Democratic Republic of the Congo (Congo-Kinshasa)',
+        'Denmark',
+        'Djibouti',
+        'Dominica',
+        'Dominican Republic',
+        'East Timor (Timor-Leste)',
+        'Ecuador',
+        'Egypt',
+        'El Salvador',
+        'Equatorial Guinea',
+        'Eritrea',
+        'Estonia',
+        'Eswatini',
+        'Ethiopia',
+        'Fiji',
+        'Finland',
+        'France',
+        'Gabon',
+        'Gambia',
+        'Georgia',
+        'Germany',
+        'Ghana',
+        'Greece',
+        'Grenada',
+        'Guatemala',
+        'Guinea',
+        'Guinea-Bissau',
+        'Guyana',
+        'Haiti',
+        'Honduras',
+        'Hungary',
+        'Iceland',
+        'India',
+        'Indonesia',
+        'Iran',
+        'Iraq',
+        'Ireland',
+        'Israel',
+        'Italy',
+        'Ivory Coast',
+        'Jamaica',
+        'Japan',
+        'Jordan',
+        'Kazakhstan',
+        'Kenya',
+        'Kiribati',
+        'Korea, North',
+        'Korea, South',
+        'Kosovo',
+        'Kuwait',
+        'Kyrgyzstan',
+        'Laos',
+        'Latvia',
+        'Lebanon',
+        'Lesotho',
+        'Liberia',
+        'Libya',
+        'Liechtenstein',
+        'Lithuania',
+        'Luxembourg',
+        'Madagascar',
+        'Malawi',
+        'Malaysia',
+        'Maldives',
+        'Mali',
+        'Malta',
+        'Marshall Islands',
+        'Mauritania',
+        'Mauritius',
+        'Mexico',
+        'Micronesia',
+        'Moldova',
+        'Monaco',
+        'Mongolia',
+        'Montenegro',
+        'Morocco',
+        'Mozambique',
+        'Myanmar (formerly Burma)',
+        'Namibia',
+        'Nauru',
+        'Nepal',
+        'Netherlands',
+        'New Zealand',
+        'Nicaragua',
+        'Niger',
+        'Nigeria',
+        'North Macedonia (formerly Macedonia)',
+        'Norway',
+        'Oman',
+        'Pakistan',
+        'Palau',
+        'Palestine State',
+        'Panama',
+        'Papua New Guinea',
+        'Paraguay',
+        'Peru',
+        'Philippines',
+        'Poland',
+        'Portugal',
+        'Qatar',
+        'Romania',
+        'Russia',
+        'Rwanda',
+        'Saint Kitts and Nevis',
+        'Saint Lucia',
+        'Saint Vincent and the Grenadines',
+        'Samoa',
+        'San Marino',
+        'Sao Tome and Principe',
+        'Saudi Arabia',
+        'Senegal',
+        'Serbia',
+        'Seychelles',
+        'Sierra Leone',
+        'Singapore',
+        'Slovakia',
+        'Slovenia',
+        'Solomon Islands',
+        'Somalia',
+        'South Africa',
+        'South Sudan',
+        'Spain',
+        'Sri Lanka',
+        'Sudan',
+        'Suriname',
+        'Sweden',
+        'Switzerland',
+        'Syria',
+        'Taiwan',
+        'Tajikistan',
+        'Tanzania',
+        'Thailand',
+        'Togo',
+        'Tonga',
+        'Trinidad and Tobago',
+        'Tunisia',
+        'Turkey',
+        'Turkmenistan',
+        'Tuvalu',
+        'Uganda',
+        'Ukraine',
+        'United Arab Emirates',
+        'United Kingdom',
+        'United States of America',
+        'Uruguay',
+        'Uzbekistan',
+        'Vanuatu',
+        'Vatican City (Holy See)',
+        'Venezuela',
+        'Vietnam',
+        'Yemen',
+        'Zambia',
+        'Zimbabwe',
+    ];
+   
+  
+    
     const newErrors = {};
     const validateForm = () => {
       
@@ -35,6 +266,25 @@ function SignUp() {
         if (password !== confirmPassword) {
             newErrors.confirmPassword = 'Passwords do not match';
         }
+
+        
+        // Validate user name
+        if (!userName) {
+            newErrors.userName = 'User name is required';
+        }
+
+         // Validate user name
+         if (!phone) {
+            newErrors.phone = 'Phone Number is required';
+        }
+        
+        
+         // Validate user name
+         if (!country) {
+            newErrors.country = 'Country name is required';
+        }
+        
+        
      
         setErrors(newErrors);
 
@@ -45,6 +295,7 @@ function SignUp() {
     const handleSubMit = (e) => {
         
         e.preventDefault();
+      
         if(validateForm()) {
             const userInfo = {
                 email,  confirmPassword
@@ -57,11 +308,20 @@ function SignUp() {
                     emailRedirectTo: `${location.origin}/api/auth/callback`
                 }
             })
+            const supabaseNewInstance = createClientComponentClient();
+            const {data} =  supabaseNewInstance.from('profiles').insert({username:userName, phone, country}).single().select()
+            console.log("test", data)
+            console.log("userdata", {
+                country, phone
+            })
+
+           
             if(error){
                 setErrors(error)
             }
             if (!error) {
-                router.push('/verify');
+                setIsSubMiting(true);
+                 router.push('/verify');
             }
 
         }else{
@@ -71,7 +331,7 @@ function SignUp() {
         
     }
     return (
-        <div className="flex h-screen">
+        <div className="flex mt-16">
             {/* Left Side with Background Image */}
             <div
                 className="hidden md:block flex-1 bg-cover bg-center"
@@ -113,7 +373,63 @@ function SignUp() {
                         <div className="mt-2">
                             {errors.email && <ErrorComponent message={errors.email} />}
                         </div>
-                           
+
+
+                        <div className="mb-4">
+                            <label htmlFor="username" className="block text-gray-600">
+                                User name
+                            </label>
+                            <input
+                                type="text"
+                                id="username"
+                                className="w-full border border-gray-300 rounded-md py-2 px-3"
+                                placeholder="Your Name"
+                                value={userName}
+                                onChange = {(e)=>setUserName(e.target.value)}
+                            />
+                          
+
+                        </div>
+                        <div className="mt-2">
+                            {errors.userName && <ErrorComponent message={errors.userName} />}
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="phone" className="block text-gray-600">
+                                Phone
+                            </label>
+                            <input
+                                type="text"
+                                id="phone"
+                                className="w-full border border-gray-300 rounded-md py-2 px-3"
+                                placeholder="Your Phone"
+                                value={phone}
+                                onChange = {(e)=>setPhone(e.target.value)}
+                            />
+                        </div>
+                        <div className="mt-2">
+                            {errors.phone && <ErrorComponent message={errors.phone} />}
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="country" className="block text-gray-600">
+                                Country
+                            </label>
+                            <select
+                        id="from"
+                        name="from"
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                        className="w-full border border-gray-300 rounded-md py-2 px-3"
+                    >
+                        <option value="">Select Country</option>
+                        {countries.map((country) => (
+                            <option key={country} value={country}>
+                                {country}
+                            </option>
+                        ))}
+                    </select>
+                        </div> 
+                       
+                      
                         <div className="mb-4">
                             <label htmlFor="password" className="block text-gray-600">
                                 Password

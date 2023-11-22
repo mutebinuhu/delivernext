@@ -5,6 +5,7 @@ import PlatformsList from '../components/PlatformsList';
 import SearchForm from '../components/SearchForm';
 import ShipmentBooking from '../components/ShipmentBooking';
 import ShipmentForm from '../components/ShipmentForm';
+import Hero from '../components/Hero';
 const Page = () => {
     /*const handleButtonClick = () => {
         // Define the action when the button is clicked
@@ -24,8 +25,16 @@ const Page = () => {
                 transition={{ duration: 0.5 }}
                 className="px-8"
             >
-                <SearchForm />
+                <Hero/>
 
+                {
+                    /**
+                }
+                
+                <SearchForm />
+                     * 
+                     */
+                }
                 {/** shipment form to post shipments
                  * 
                  *   <div className='mt-12'>

@@ -1,4 +1,5 @@
 // Hero.js
+import Link from 'next/link';
 import React from 'react';
 
 const Hero = () => {
@@ -6,23 +7,29 @@ const Hero = () => {
     <div className=" flex flex-col-reverse mt-24 md:mt-0 md:flex-row items-center">
       <div className="container mx-auto flex justify-center items-center">
         <div className="w-full md:w-1/2 pr-8 md:pr-16 mb-8 md:mb-0">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Deliver Bwoys</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Deliver Next</h1>
           <p className="text-lg mb-8">We're your local delivery experts, getting your goods where they need to be.</p>
+                        <Link
+                    href={`/book`}
 
-          <button
-                            type="submit"
-                            className="text-white bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  px-1 sm:px-4 py-3 sm:py-4 text-center mr-3 md:mr-0 dark:bg-primary dark:hover:bg-primary-800 dark:focus:ring-red-5000"
-                        >
-                            Book Now
-                        </button>  
+                    className=""
+                >
+               
+                    <button className=" text-white mb-2 sm:mb-0 bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm  px-1 sm:px-4 py-3 text-center mr-3 md:mr-0 dark:bg-primary dark:hover:bg-primary-800 dark:focus:ring-red-5000"> Book Now    </button>
+                    
+                </Link>
+
+                <Link
+                    href={`https://wa.me/+971522437828`}
+                    target='_blank'
+                    className="mx-4"
+                >
+               
+                    <button className=" text-white mb-2 sm:mb-0 bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm  px-1 sm:px-4 py-3 text-center mr-3 md:mr-0 dark:bg-primary dark:hover:bg-primary-800 dark:focus:ring-red-5000">Contact Us</button>
+                    
+                </Link>
                         
-                        
-                        <button
-                            type="submit"
-                            className="text-white mx-4 bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  px-1 sm:px-4 py-3 sm:py-4 text-center mr-3 md:mr-0 dark:bg-primary dark:hover:bg-primary-800 dark:focus:ring-red-5000"
-                        >
-                            Contact Us
-                        </button>        </div>
+            </div>
         <div className="w-full md:w-1/2 hidden sm:block">
           <img
             className="object-cover h-80 md:h-96 lg:h-full w-full rounded-md"

@@ -28,6 +28,7 @@ export const POST = async (request) => {
         
     const bookingInfo = await request.json();
     
+    
     const supabase =  createRouteHandlerClient({cookies})
 
     const {data, error} = await supabase.from('bookings').insert({...bookingInfo}).single().select()

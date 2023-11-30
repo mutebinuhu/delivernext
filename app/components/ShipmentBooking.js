@@ -15,13 +15,16 @@ const ShipmentBooking = ({showPage}) => {
  
     const shipperId = searchParams.get('shipper_id')
     const shipperName = searchParams.get('platform')
-    console.log("shipper", shipperId, "shipperName", shipperName)
+    //console.log("shipper", shipperId, "shipperName", shipperName)
 
     const [formValues, setFormValues] = useState({
         pickupLocation: '',
         deliveryLocation: '',
         shipmentDate: '',
         weight: '',
+        phone:'',
+        receiverContact:'',
+        information:''
 
     });
 
@@ -38,24 +41,45 @@ const ShipmentBooking = ({showPage}) => {
         if (!formValues.shipmentDate) {
             newErrors.shipmentDate = 'Shipment date is required';
         }
-        if (!formValues.weight) {
-            newErrors.weight = 'Weight is required';
-        } else if (isNaN(formValues.weight)) {
-            newErrors.weight = 'Weight must be a number';
+        if (!formValues.receiverContact) {
+            newErrors.receiverContact= 'Receiver  contact is required';
         }
-
+        if (!formValues.phone) {
+            newErrors.phone= 'Please type Your  contact';
+        }
+     
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async(e) => {
         e.preventDefault();
         if (validateForm()) {
-            console.log(e)
+            //console.log(e)
             formValues.shipperId = shipperId
             formValues.shipperName = shipperName
-            console.log("formValues ", formValues)
-            
+            const submitData = {
+                shipper_id: formValues.shipperId,
+                shipper_name: formValues.shipperName,
+                pickup_location: formValues.pickupLocation,
+                drop_off: formValues.deliveryLocation,
+                weight: formValues.weight,
+                customer_phone: formValues.phone,
+                receivers_contact: formValues.receiverContact,
+                shipment_date:formValues.shipmentDate,
+                information:formValues.information
+
+                
+
+            }
+           console.log("formValues ", submitData)
+            const response = await fetch('https://delivernext.vercel.app/api/booking', {
+                method:'POST',
+                body:JSON.stringify(submitData)
+            })
+
+            const data = await  response.json();
+            console.log("res", data)
             // Your form submission logic here
             // You can use the formValues state for submitting data to your server.
         }
@@ -63,10 +87,12 @@ const ShipmentBooking = ({showPage}) => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+        console.log("name--", {[name]: value})
         setFormValues({
             ...formValues,
             [name]: value,
         });
+       // console.log("formValues", formValues)
     };
 
    
@@ -118,6 +144,38 @@ const ShipmentBooking = ({showPage}) => {
                             )}
                         </div>
                         <div className="mb-4">
+                            <label htmlFor="Tel" className="block text-sm font-medium">
+                                phone
+                            </label>
+                            <input
+                                type="text"
+                                id="phone"
+                                name="phone"
+                                className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full py-3 border-gray-200 ${errors.userContact && 'border-red-500'}`}
+                                value={formValues.phone}
+                                onChange={handleInputChange}
+                            />
+                            {errors.phone && (
+                                <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+                            )}
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="Tel" className="block text-sm font-medium">
+                                Receivers Contact
+                            </label>
+                            <input
+                                type="text"
+                                id="receiverContact"
+                                name="receiverContact"
+                                className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full py-3 border-gray-200 ${errors.weight && 'border-red-500'}`}
+                                value={formValues.receiverContact}
+                                onChange={handleInputChange}
+                            />
+                            {errors.receiverContact && (
+                                <p className="text-red-500 text-xs mt-1">{errors.receiverContact}</p>
+                            )}
+                        </div>
+                        <div className="mb-4">
                             <label htmlFor="shipmentDate" className="block text-sm font-medium">
                                 Shipment Date
                             </label>
@@ -156,7 +214,9 @@ const ShipmentBooking = ({showPage}) => {
                             <textarea
                                 className="w-full border rounded py-2 px-3"
                                 id="moreInformation"
-                                name="moreInformation"
+                                name="information"
+                                value={formValues.information}
+                                onChange={handleInputChange}
                               
                             />
                         </div>

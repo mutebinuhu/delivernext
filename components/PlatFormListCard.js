@@ -17,7 +17,7 @@ const PlatFormListCard = ({ imageSrc, showBookingForm, description, ctaText, cta
     }
     return (
         <div
-            className="max-w-md rounded overflow-hidden shadow-lg mt-2 py-2"
+            className="max-w-md rounded overflow-hidden shadow-lg py-2"
             whileHover={{ scale: 1.05 }}
         >
             

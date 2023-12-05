@@ -51,7 +51,7 @@ const Page = () => {
 
                     <div className='grid grid-cols-1 sm:grid-cols-4 gap-4 w-full '>
                         <PlatformsList />
-                  <h2>Still OnBoording Partners</h2>
+                  <h2>Still On Boarding Partners</h2>
 
                    </div>
                   

@@ -15,6 +15,8 @@ const Hero = () => {
                     className=""
                 >
                
+               <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Get 90% Discount on Your first Booking</p>
+
                     <button className=" text-white mb-2 sm:mb-0 bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm  px-1 sm:px-4 py-3 text-center mr-3 md:mr-0 dark:bg-primary dark:hover:bg-primary-800 dark:focus:ring-red-5000"> Book Now    </button>
                     
                 </Link>

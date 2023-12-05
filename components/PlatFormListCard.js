@@ -22,7 +22,8 @@ const PlatFormListCard = ({ imageSrc, showBookingForm, description, ctaText, cta
         >
             
             <img src={imageSrc} alt="Card Image" className="w-full h-60 object-cover" />
-            <div className="px-6 py-1">
+            <div className="px-6 py
+            -1">
                 <div className="font-bold text-xl mb-2">{title}</div>
                 <p className="text-gray-700 text-base my-1">{description}</p>
                 <p className='font-bold py-2'>From <span>{currencey}</span> <span> {price}</span></p>
@@ -39,13 +40,23 @@ const PlatFormListCard = ({ imageSrc, showBookingForm, description, ctaText, cta
                
                     <button className="w-full text-white mb-2 sm:mb-0 bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm  px-1 sm:px-4 py-3 text-center mr-3 md:mr-0 dark:bg-primary w-full dark:hover:bg-primary-800 dark:focus:ring-red-5000">     {ctaText2}</button>
                     
+
                 </Link>
-                <button
-                    onClick={onClick}
-                    className="hover:bg-blue-700 w-full border border border-primary hover:bg-primary hover:text-white font-bold py-1.5 px-2 rounded"
-                >
+                {
+                    /**
+                     * learn more Link, i have decided to disable it for now
+                     *   
+                     * 
+                        <button
+                        onClick={onClick}
+                        className="hover:bg-blue-700 w-full border border border-primary hover:bg-primary hover:text-white font-bold py-1.5 px-2 rounded"
+                        >
                     {ctaText}
                 </button>
+                     * 
+                     */
+                }
+              
             </div>
         </div>
     );

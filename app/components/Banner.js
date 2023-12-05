@@ -12,6 +12,7 @@ const Banner = () => {
                 <div class="mr-auto place-self-center lg:col-span-7">
                     <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Effortless and Fast Shipments at Your Fingertips</h1>
                     <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Your Ultimate Destination for Fast, Reliable, and Hassle-Free Local and International Shipments.</p>
+
                     <Link href="/dashboard" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
                         Get started
                         

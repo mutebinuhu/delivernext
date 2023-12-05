@@ -18,7 +18,7 @@ const Page = () => {
     };
     return (
         <div className="min-h-screen w-auto">
- <Hero/>
+            <Hero/>
             <div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -51,6 +51,8 @@ const Page = () => {
 
                     <div className='grid grid-cols-1 sm:grid-cols-4 gap-4 w-full '>
                         <PlatformsList />
+                  <h2>Still OnBoording Partners</h2>
+
                    </div>
                   
                 </div>

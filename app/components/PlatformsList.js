@@ -40,6 +40,7 @@ const PlatformsList = async () => {
                     id={platform.id}
                 /> 
                 </div>
+              
             )
         })}
 

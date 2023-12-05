@@ -34,7 +34,7 @@ const Footer = () => {
                             <p>Electra Street</p>
                             <p>Abudhabi</p>
                             <p>
-                                Phone: <a href="tel:+1234567890">(123) 456-7890</a>
+                                Phone: <a href="tel:+1234567890">+971522437828</a>
                             </p>
                             <p>
                                 Email: <a href="mailto:info@example.com">info@delivernext.com</a>

@@ -33,24 +33,10 @@ const ContactSection = () => {
                                     d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
                                 />
                             </svg>
-                            <a href="tel:+1234567890" className="text-blue-500">+1 (234) 567-890</a>
+                            <a href="tel:+1234567890" className="text-blue-500">+971522437828</a>
                         </div>
                         <div className="flex items-center space-x-4 mt-2">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="w-6 h-6 text-blue-500"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                                />
-                            </svg>
-                            <a href="mailto:info@example.com" className="text-blue-500">info@delivernext.com</a>
+                         
                         </div>
                         <div className="my-6">
                             <LinkPrimaryButton message="GET STARTED" linkTo="/dashboard" />

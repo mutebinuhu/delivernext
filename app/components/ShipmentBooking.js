@@ -54,6 +54,7 @@ const ShipmentBooking = ({showPage}) => {
 
     const handleFormSubmit = async(e) => {
         e.preventDefault();
+       
         if (validateForm()) {
             //console.log(e)
             formValues.shipperId = shipperId
@@ -69,7 +70,7 @@ const ShipmentBooking = ({showPage}) => {
                 shipment_date:formValues.shipmentDate,
                 information:formValues.information
             }
-           console.log("formValues ", submitData)
+          
             try {
                 const response = await fetch('https://delivernext.vercel.app/api/booking', {
                 method:'POST',
@@ -77,13 +78,23 @@ const ShipmentBooking = ({showPage}) => {
             })
 
             const data = await  response.json();
+            if(data.data){
+                setFormValues({
+                pickupLocation: '',
+                deliveryLocation: '',
+                shipmentDate: '',
+                weight: '',
+                phone:'',
+                receiverContact:'',
+                information:''
+        
+                })
+              }
             if (!response.ok) {
                 throw new Error(`${response.status} ${response.statusText}`);
                 //console.log("err Now ",response.status )
               }
-              if(data.data){
-                setFormValues('');
-              }
+             
             } catch (error) {
                 console.log("err from response", error)
             }

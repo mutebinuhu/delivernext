@@ -78,6 +78,16 @@ const ShipmentBooking = ({showPage}) => {
             })
 
             const data = await  response.json();
+            setFormValues({
+                pickupLocation: '',
+                deliveryLocation: '',
+                shipmentDate: '',
+                weight: '',
+                phone:'',
+                receiverContact:'',
+                information:''
+                })
+            console.log("data", data.data)
             if(data.data){
                 setFormValues({
                 pickupLocation: '',

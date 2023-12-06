@@ -221,7 +221,7 @@ const ShipmentBooking = ({showPage}) => {
                         </div>
                         <div className="mb-4">
                             <label htmlFor="weight" className="block text-sm font-medium">
-                                Weights (in kg)
+                                Weights (in kgs)
                             </label>
                             <input
                                 type="number"

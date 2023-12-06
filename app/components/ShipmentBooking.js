@@ -63,14 +63,11 @@ const ShipmentBooking = ({showPage}) => {
                 shipper_name: formValues.shipperName,
                 pickup_location: formValues.pickupLocation,
                 drop_off: formValues.deliveryLocation,
-                weight: formValues.weight,
+                weight: formValues.weight ? formValues.weight: 0,
                 customer_phone: formValues.phone,
                 receivers_contact: formValues.receiverContact,
                 shipment_date:formValues.shipmentDate,
                 information:formValues.information
-
-                
-
             }
            console.log("formValues ", submitData)
             const response = await fetch('https://delivernext.vercel.app/api/booking', {

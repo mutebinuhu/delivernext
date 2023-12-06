@@ -15,7 +15,6 @@ const ShipmentBooking = ({showPage}) => {
  
     const shipperId = searchParams.get('shipper_id')
     const shipperName = searchParams.get('platform')
-    //console.log("shipper", shipperId, "shipperName", shipperName)
 
     const [formValues, setFormValues] = useState({
         pickupLocation: '',
@@ -56,7 +55,7 @@ const ShipmentBooking = ({showPage}) => {
         e.preventDefault();
        
         if (validateForm()) {
-            //console.log(e)
+
             formValues.shipperId = shipperId
             formValues.shipperName = shipperName
             const submitData = {
@@ -78,16 +77,9 @@ const ShipmentBooking = ({showPage}) => {
             })
 
             const data = await  response.json();
-            setFormValues({
-                pickupLocation: '',
-                deliveryLocation: '',
-                shipmentDate: '',
-                weight: '',
-                phone:'',
-                receiverContact:'',
-                information:''
-                })
-            console.log("data", data.data)
+         
+            //clear state
+
             if(data.data){
                 setFormValues({
                 pickupLocation: '',
@@ -102,11 +94,11 @@ const ShipmentBooking = ({showPage}) => {
               }
             if (!response.ok) {
                 throw new Error(`${response.status} ${response.statusText}`);
-                //console.log("err Now ",response.status )
               }
              
             } catch (error) {
-                console.log("err from response", error)
+                throw new Error(`${error}`);
+
             }
             // Your form submission logic here
             // You can use the formValues state for submitting data to your server.
@@ -115,12 +107,10 @@ const ShipmentBooking = ({showPage}) => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        console.log("name--", {[name]: value})
         setFormValues({
             ...formValues,
             [name]: value,
         });
-       // console.log("formValues", formValues)
     };
 
    

@@ -70,13 +70,22 @@ const ShipmentBooking = ({showPage}) => {
                 information:formValues.information
             }
            console.log("formValues ", submitData)
-            const response = await fetch('https://delivernext.vercel.app/api/booking', {
+            try {
+                const response = await fetch('https://delivernext.vercel.app/api/booking', {
                 method:'POST',
                 body:JSON.stringify(submitData)
             })
 
             const data = await  response.json();
+            if (!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+                //console.log("err Now ",response.status )
+              }
+              setFormValues('');
             console.log("res", data)
+            } catch (error) {
+                console.log("err from response", error)
+            }
             // Your form submission logic here
             // You can use the formValues state for submitting data to your server.
         }

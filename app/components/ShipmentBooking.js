@@ -81,7 +81,7 @@ const ShipmentBooking = ({showPage}) => {
                 throw new Error(`${response.status} ${response.statusText}`);
                 //console.log("err Now ",response.status )
               }
-              if(response.data){
+              if(data.data){
                 setFormValues('');
               }
             } catch (error) {

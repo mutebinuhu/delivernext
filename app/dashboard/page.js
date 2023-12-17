@@ -6,6 +6,7 @@ import SearchForm from '../components/SearchForm';
 import ShipmentBooking from '../components/ShipmentBooking';
 import ShipmentForm from '../components/ShipmentForm';
 import Hero from '../components/Hero';
+import Footer from '../components/Footer';
 const Page = () => {
     /*const handleButtonClick = () => {
         // Define the action when the button is clicked
@@ -59,7 +60,7 @@ const Page = () => {
                
             </div>
           
-          
+          <Footer/>
         </div>
     );
 };

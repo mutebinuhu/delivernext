@@ -48,6 +48,9 @@ const NavBar = () => {
                        <li>
                            <Link href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">My Shipments</Link>
                        </li>
+                       <li>
+                           <Link href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Shop</Link>
+                       </li>
                </>
            )
            }else{
@@ -79,7 +82,7 @@ const NavBar = () => {
     return (
 
 
-        <nav className="fixed bg-white border-gray-200 top-0 dark:bg-gray-900  w-screen" id="testmonials">
+        <nav className="fixed bg-gray-100 z-20 border-gray-200 top-0 dark:bg-gray-900  w-screen" id="testmonials">
             <div className="max-w-screen-xl  flex flex-wrap items-center justify-between mx-auto p-4">
                 <a onClick={redirectHome} className="flex items-center">
                    <div className='mr-2 dark:text-accent '>
